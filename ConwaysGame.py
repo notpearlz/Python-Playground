@@ -2,7 +2,10 @@
 import random
 
 def main():
-    pass
+    boardSize = 10
+
+    board = fillBoard(boardSize)
+    printBoard(board)
 
 
 
@@ -19,11 +22,25 @@ def hasNeighbor():
     pass
 
 
+def printBoard(board):
+    size = len(board)
 
-
-def fillBoard(board, size):
     for i in range(size):
-        board[i] = ''
+        for j in range(size):
+            print(board[i][j], end='')
+        print();
+
+    
+
+def fillBoard(size):
+    board = []
+    for i in range(size):
+        board.append([])
+        for j in range(size):
+            board[i].append('#')
+
+    return board
+            
     
 def populateCell():
     cellChance = 5
